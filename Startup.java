@@ -1,8 +1,4 @@
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
-
-
 /**
  * Startup
  */
@@ -61,15 +57,12 @@ public class Startup {
         vowels.add('o');
         vowels.add('u');
         vowels.add('y');
-        vowels.add('A');
-        vowels.add('E');
-        vowels.add('I');
-        vowels.add('O');
-        vowels.add('U');
-        vowels.add('Y');
+
+        inputString = inputString.toLowerCase();
 
         for(int i = 0; i < inputString.length(); i++) {              
             char tmp = inputString.charAt(i);
+            
             if(vowels.contains(tmp)) {
                 res++;
             }
