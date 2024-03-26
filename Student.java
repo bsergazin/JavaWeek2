@@ -4,12 +4,27 @@ import java.time.Period;
 enum Major {COMPUTERSCIENCE, BUSINESS, PSYCHOLOGY, COMMUNICATIONS};
 
 public class Student {
-    String name = "new student";
-    float GPA;   
+    String name;
+    double GPA;   
     boolean isVet; 
     int luckyNum;
     Major major;
     LocalDate dateOfBirth;
+
+    // Constructor
+    //public Student() {
+    //    GPA = 1.0;
+    //    isVet = false;
+    //}
+
+    public Student(String name) {
+        this.name = name;
+    }
+
+    public Student (String name, LocalDate dob) {
+        this.name = name;
+        this.dateOfBirth = dob;
+    }
 
     //overriding toString method
     public String toString(){

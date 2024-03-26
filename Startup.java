@@ -8,7 +8,7 @@ public class Startup {
     static int classLocal = 0;
     public static void main(String[] args) {
 
-        Student student = new Student();
+        Student student = new Student("New student");
         student.major = Major.BUSINESS;
         student.name = "Name";
         student.dateOfBirth = LocalDate.of(1994, 03, 23);
@@ -17,31 +17,42 @@ public class Startup {
         System.out.println(student.toString("overloaded"));    
         System.out.println(student.getAge()); 
 
-        Student student2 = new Student();
+        Student student2 = new Student("New student", LocalDate.of(1994, 03, 23));
         student2.major = Major.COMPUTERSCIENCE;
 
         if(student.major == Major.BUSINESS) {
             System.out.println("Business");
         }
         
-        Car car1 = new Car();
+        Car car1 = new Car(CarMake.TESLA, CarModel.S, 2022);
         car1.setHorsePower(205);
         car1.setPowerType(PowerType.ELECTRIC);
         car1.setCarStyle(CarStyle.SEDAN);
 
-        Car car2 = new Car();
+        car1.Honk();
+        System.out.println("default mileage: " + car1.getMileage());
+        car1.Drive(35978.01);
+        System.out.println("current mileage: " + car1.getMileage());
+        System.out.println("Mileage in kms: " + Car.ConvertMileageToKilometers(car1.getMileage()));
+
+        System.out.println("Number of Cars on road: " + Car.numberOfCars);
+
+        Car car2 = new Car(CarMake.TOYOTA, CarModel.TACOMA, 2000);
         car2.setHorsePower(140);
         car2.setPowerType(PowerType.GAS);
         car2.setCarStyle(CarStyle.SUV);
-
+  
+        System.out.println(car2);
+        System.out.println(car2.getYear());
         System.out.println(car1.getHorsePower());
         System.out.println(car2.getPowerType());
+
+        System.out.println("Number of Cars on road: " + Car.numberOfCars);
 
         Instructor teacher = new Instructor();
         teacher.subject = Major.PSYCHOLOGY;
         teacher.email = "teacher@mail";
 
-        
         /*Circle circle = new Circle();
         circle.radius = 5;
 
